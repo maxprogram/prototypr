@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /projects
   # GET /projects.json
   def index
@@ -41,7 +43,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-
+    @project.user_id = current_user.id
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -73,7 +75,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    @project.active = false
 
     respond_to do |format|
       format.html { redirect_to projects_url }
