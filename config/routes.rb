@@ -2,9 +2,9 @@ Prototypr::Application.routes.draw do
   resources :projects
 
 
-  devise_for :users
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_up => 'register'}
 
-  resources :users
+  #resources :users
   root :to => "home#index"
 
   # The priority is based upon order of creation:
