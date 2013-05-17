@@ -115,14 +115,9 @@ DEPENDENCIES
   devise
   ejs
   jquery-rails
-<<<<<<< HEAD
   json
   less-rails
-  pg (= 0.12.2)
-=======
-  less
   pg
->>>>>>> 781ba3f5c60859268e2d5386f21366f354a11d20
   rails (= 3.2.11)
   sqlite3
   therubyracer (= 0.10.2)
