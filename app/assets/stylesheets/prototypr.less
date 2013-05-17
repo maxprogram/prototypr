@@ -20,8 +20,8 @@
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff') format('woff');
 }
 
-@bigFont: "Bebas Neue", Helvetica;
-
+@bigFont: "Bebas Neue", Helvetica, sans-serif;
+@niceFont: "Open Sans", Helvetica, sans-serif;
 
 
 .landing-hero {
@@ -47,8 +47,8 @@
         top: 0;
         width: 100%;
         z-index: 40;
-        padding-top: 100px;
-        text-shadow: 0 0 15px rgba(0,0,0,0.6),0 -1px 1px rgba(0,0,0,0.6)
+        padding-top: 150px;
+        text-shadow: 0 0 15px rgba(0,0,0,0.6), 0 -1px 1px rgba(0,0,0,0.6)
     }
 
     .span12 {
@@ -58,11 +58,30 @@
     h1 {
         color: @white;
         font-family: @bigFont;
-        font-size: 45px;
+        font-size: 50px;
     }
 
     h2 {
         color: @white;
         font-size: 20px;
     }
+}
+
+.band {
+    margin-top: 35px;
+}
+
+.process {
+    h1, h4 {
+        text-align: center;
+        font-family: @niceFont;
+        font-weight: normal;
+    }
+}
+
+.footer {
+    background-color: @gray;
+    color: @white;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.9);
+    padding: 35px 0;
 }
