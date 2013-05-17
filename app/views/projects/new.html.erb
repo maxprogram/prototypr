@@ -1,7 +1,21 @@
-<div class="span12">
-<h1>New project</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', projects_path %>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <h1>Start a Project</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span9">
+            <%= render 'form' %>
+        </div>
+        <div class="span3">
+            <h3>Questions & Answers</h3>
+            <h4>How do you do this?</h4>
+            <p>This is how.</p>
+            <h4>How do you do that?</h4>
+            <p>This is also how.</p>
+            <h4>Why am I here?</h4>
+            <p>You tell me.</p>
+        </div>
+    </div>
 </div>
