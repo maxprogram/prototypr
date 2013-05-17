@@ -11,28 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :min_price %><br />
-    <%= f.text_field :min_price %>
-  </div>
-  <div class="field">
-    <%= f.label :max_price %><br />
-    <%= f.text_field :max_price %>
-  </div>
+<div class="row">
+    <div class="span4">
+        <div class="field">
+            <%= f.label :title %><br />
+            <%= f.text_field :title %>
+        </div>
+        <div class="field">
+            <%= f.label :end_date %><br />
+            <!--<%= f.date_select :end_date %>-->
+            <input class="datepicker" size="16" type="text" value="12-02-2012" name="project[end_date]">
+        </div>
+        <div class="field">
+            <%= f.label :min_price %><br />
+            <%= f.text_field :min_price %>
+        </div>
+        <div class="field">
+            <%= f.label :max_price %><br />
+            <%= f.text_field :max_price %>
+        </div>
+    </div>
+    <div class="span5">
+        <div class="field">
+            <%= f.label :description %><br />
+            <%= f.text_area :description %>
+      </div>
+    </div>
+</div>
 
   <div class="actions">
-    <%= f.submit %>
+    <input name="commit" type="submit" value="Start the Project" class="btn btn-success btn-large">
   </div>
 <% end %>
