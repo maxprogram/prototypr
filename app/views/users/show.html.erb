@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First:</b>
+  <%= @user.first %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%= @user.last %>
+</p>
+
+<p>
+  <b>Reputation:</b>
+  <%= @user.reputation %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @user.flag %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @user.active %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%= @user.profile %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <b>Web:</b>
+  <%= @user.web %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

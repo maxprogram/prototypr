@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first: MyString
+  last: MyString
+  reputation: 1
+  flag: false
+  active: false
+  profile: MyText
+  bio: MyText
+  web: MyString
+
+two:
+  first: MyString
+  last: MyString
+  reputation: 1
+  flag: false
+  active: false
+  profile: MyText
+  bio: MyText
+  web: MyString
