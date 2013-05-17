@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <b>Submission:</b>
+  <%= @project.submission_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @project.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @project.end_date %>
+</p>
+
+<p>
+  <b>Min price:</b>
+  <%= @project.min_price %>
+</p>
+
+<p>
+  <b>Max price:</b>
+  <%= @project.max_price %>
+</p>
+
+<p>
+  <b>Vote:</b>
+  <%= @project.vote %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @project.flag %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @project.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
