@@ -8,6 +8,12 @@
 </head>
 <body>
     <%= render 'helpers/nav' %>
+    <% if !notice.nil?%>
+    <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if !alert.nil?%>
+    <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
     <%= render 'helpers/footer' %>
 

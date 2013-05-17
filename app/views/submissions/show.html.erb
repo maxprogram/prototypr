@@ -16,7 +16,8 @@
   <%= @submission.description %>
 </p>
 
-
+<% if can? :update, @submission %>
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
+<% end %>
 <%= link_to 'Back', submissions_path %>
 </div>

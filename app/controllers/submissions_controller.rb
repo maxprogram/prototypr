@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /submissions
   # GET /submissions.json
   def index
@@ -24,11 +26,15 @@ class SubmissionsController < ApplicationController
   # GET /submissions/new
   # GET /submissions/new.json
   def new
-    @submission = Submission.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @submission }
+    if(current_user.nil?)
+      redirect_to new_user_session_url, notice: 'Please Login or Signup.'
+    else
+      @submission = Submission.new
+      @submission.project_id = params[:project_id].to_f
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @submission }
+      end
     end
   end
 
@@ -41,14 +47,17 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(params[:submission])
-
-    respond_to do |format|
-      if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
-        format.json { render json: @submission, status: :created, location: @submission }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
+    @submission.user_id = current_user.id
+    if(!@submission.nil?)
+      respond_to do |format|
+        if @submission.save
+          format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
+          format.json { render json: @submission, status: :created, location: @submission }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @submission.errors, status: :unprocessable_entity }
+        end
+      
       end
     end
   end
@@ -57,7 +66,7 @@ class SubmissionsController < ApplicationController
   # PUT /submissions/1.json
   def update
     @submission = Submission.find(params[:id])
-
+    
     respond_to do |format|
       if @submission.update_attributes(params[:submission])
         format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
@@ -73,7 +82,8 @@ class SubmissionsController < ApplicationController
   # DELETE /submissions/1.json
   def destroy
     @submission = Submission.find(params[:id])
-    @submission.destroy
+    @submission.active = false
+    #.destroy
 
     respond_to do |format|
       format.html { redirect_to submissions_url }

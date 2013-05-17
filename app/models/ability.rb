@@ -42,6 +42,8 @@ class Ability
       can :update, Project do |project|
           project.try(:user_id) == user.id
       end
+
+      
     end
   end
 end
