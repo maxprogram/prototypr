@@ -2,16 +2,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @project.user_id %>
-</p>
-
-<p>
-  <b>Submission:</b>
-  <%= @project.submission_id %>
-</p>
-
-<p>
   <b>Title:</b>
   <%= @project.title %>
 </p>
@@ -36,20 +26,6 @@
   <%= @project.max_price %>
 </p>
 
-<p>
-  <b>Vote:</b>
-  <%= @project.vote %>
-</p>
-
-<p>
-  <b>Flag:</b>
-  <%= @project.flag %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%= @project.active %>
-</p>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

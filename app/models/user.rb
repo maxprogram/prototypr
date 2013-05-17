@@ -12,15 +12,16 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :active, :bio, :first, :flag, :last, :profile, :reputation, :web
 
-
+  validates_presence_of :email, :password, :password_confirmation, :bio, :first, :last
 
   
-protected
+  protected
 
     def create_default_data
       self.active = true
   	  self.flag = false
   	  self.reputation = 0
+  	  self.admin = false
     end
   
 end

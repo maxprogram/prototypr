@@ -22,7 +22,7 @@ end
 
 gem 'json'
 gem 'jquery-rails'
-
+gem "cancan"
 gem 'devise'
 
 group :production do

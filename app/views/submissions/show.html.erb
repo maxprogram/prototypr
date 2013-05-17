@@ -16,16 +16,6 @@
   <%= @submission.description %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @submission.user_id %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @submission.project_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
