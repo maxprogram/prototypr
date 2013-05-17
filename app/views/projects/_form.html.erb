@@ -14,26 +14,33 @@
 <div class="row">
     <div class="span4">
         <div class="field">
-            <%= f.label :title %><br />
+            <%= f.label :title %>
             <%= f.text_field :title %>
         </div>
         <div class="field">
-            <%= f.label :end_date %><br />
+            <%= f.label :end_date %>
             <!--<%= f.date_select :end_date %>-->
-            <input class="datepicker" size="16" type="text" value="12-02-2012" name="project[end_date]">
+            <input class="datepicker" size="16" type="text" value="" name="project[end_date]" data-date-format="yyyy-mm-dd">
         </div>
         <div class="field">
-            <%= f.label :min_price %><br />
-            <%= f.text_field :min_price %>
+            <%= f.label :min_price %>
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                <input id="project_min_price" name="project[min_price]" size="30" type="text">
+            </div>
+
         </div>
         <div class="field">
-            <%= f.label :max_price %><br />
-            <%= f.text_field :max_price %>
+            <%= f.label :max_price %>
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                <input id="project_max_price" name="project[max_price]" size="30" type="text">
+            </div>
         </div>
     </div>
     <div class="span5">
         <div class="field">
-            <%= f.label :description %><br />
+            <%= f.label :description %>
             <%= f.text_area :description %>
       </div>
     </div>
