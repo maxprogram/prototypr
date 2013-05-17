@@ -36,13 +36,25 @@ class Ability
     else
       can :read, :all
       can :create, :all
+
       can :update, Submission do |submission|
           submission.try(:user_id) == user.id
       end
       can :update, Project do |project|
           project.try(:user_id) == user.id
       end
-
+      can :edit, Submission do |submission|
+          submission.try(:user_id) == user.id
+      end
+      can :edit, Project do |project|
+          project.try(:user_id) == user.id
+      end
+      can :destroy, Submission do |submission|
+          submission.try(:user_id) == user.id
+      end
+      can :destroy, Project do |project|
+          project.try(:user_id) == user.id
+      end
       
     end
   end
