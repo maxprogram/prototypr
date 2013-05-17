@@ -7,9 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render 'helpers/nav' %>
-<%= yield %>
+  <%= render 'helpers/nav' %>
+  <div class="container">
+	  <div class="span12">
+	    <%#= bootstrap_flash %>
+	    <%= yield %>
+	  </div>
+	</div> <!-- /container -->
 
 <%= javascript_include_tag "application" %>
 </body>
