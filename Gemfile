@@ -13,11 +13,14 @@ gem 'sqlite3'
 group :assets do
   gem 'less-rails'
   #gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer', :platforms => :ruby
+  #gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer', '0.10.2'
+  gem 'ejs'
+
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'json'
 gem 'jquery-rails'
 gem 'pg', '0.12.2'
 
