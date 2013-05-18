@@ -24,7 +24,7 @@
 @niceFont: "Open Sans", Helvetica, sans-serif;
 
 body {
-    padding-top: 60px;
+    padding-top: 40px;
     font-family: @niceFont;
 }
 
@@ -41,7 +41,7 @@ body {
     z-index: 1;
     width: 100%;
     height: 500px;
-    margin-top: -60px;
+    margin-top: -40px;
     margin-bottom: 35px;
     overflow: hidden;
     background-color: @black;
@@ -129,6 +129,11 @@ h1 {
 }
 
 .footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+
     margin: 0;
     background-color: @gray;
     color: @white;

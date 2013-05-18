@@ -3,7 +3,7 @@
         <div class="container">
             <%= link_to 'Prototypr', root_path, :class => "brand" %>
             <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
+                <!--li class="active"><a href="#">Home</a></li-->
                 <li><%= link_to 'Start a Project', new_project_path %>
                     <!--a href="#">Start a Project</a--></li>
                 <li><%= link_to 'Find a Project', projects_path %><!--a href="#">Find a Project</a--></li>
@@ -15,10 +15,10 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.email%> <b class="caret"></b></a>
 
                     <ul class="dropdown-menu">
-                        <li><a href="">Dashboards</a></li>
+                        <li><%= link_to 'Dashboard', edit_user_registration_path %><!--a href="">Dashboards</a--></li>
                         <li><a href="">Your Projects</a></li>
                         <li><a href="">Your Designs</a></li>
-                        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                        <li><%= link_to 'Profile', profile_url %></li>
                         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                     </ul>
 

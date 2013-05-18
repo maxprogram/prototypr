@@ -1,0 +1,85 @@
+<div class="dashboard" style="margin-top:30px;">
+  <div class="editbutton btn btn-middle btn-link" style="float:right;margin-right:40px;">
+    <%= link_to 'Edit', edit_user_registration_path(@user) %>
+  </div>
+  <%= image_tag "empty_profile.gif", :class => 'image-wrap', :style => 'm-webkit-border-radius: 50em;
+  -moz-border-radius: 50em;border-radius: 50em;width: 150px;height: 150px;float:left;margin-left:30px;' %>
+
+  <div class="info" style="font-size:2em;float:left;margin-left:20px;">
+
+  <div class="name" style="margin:30px;">
+  <%= @user.first %> <%= @user.last %> (<%= @user.reputation %>)<br/>
+  </div>
+  <div class="name" style="margin:30px;width:900px;font-size:30px;">
+    <b>Bio:</b>
+    <%= @user.bio %>
+  </div>
+  <div class="name" style="margin:30px;font-size:20px;">
+   <%= @user.web unless !@user.web.nil?%>
+  </div>
+  
+</div>
+<div style="clear:both;"/>
+
+<div class="btn-Projects" style="float:left;margin:10px;">
+  <%= link_to 'Projects', "#", :class=> "btn btn-middle btn-info" %>
+</div>
+<div class="btn-Submission" style="float:left;margin:10px;">
+  <%= link_to 'Submissions', "#", :class=> "btn btn-middle btn-info" %>
+</div>
+<div class="btn-Designs" style="float:left;margin:10px;">
+  <%= link_to 'Designs', "#", :class=> "btn btn-middle btn-info" %>
+</div>
+<div style="clear:both;"/>
+
+<div id="Projects" class="span12" style="height:100%;">
+  <div class="band samples">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="project">
+                    <%= image_tag("samples/carabiners.jpg") %>
+                    Caribiners
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/iphonestand1.jpg") %>
+                    iPhone stand
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/iphonecase.jpg") %>
+                    iPhone Case
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/ironman.jpg") %>
+                    Iron Man helmet
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/bracelet.jpg") %>
+                    Bracelet
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/net.jpg") %>
+                    Holding net
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/guitar.jpg") %>
+                    Guitar winder
+                </div>
+                <div class="project">
+                    <%= image_tag("samples/phonecase.jpg") %>
+                    Sprint phone case
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="Submission" class="span12" style="height:100%;">
+  Submission
+
+</div>
+<div id="Designs" class="span12" style="height:100%;">
+  Design
+</div>
+
+</div>
