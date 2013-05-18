@@ -1,0 +1,9 @@
+staging:
+  aws_access_key: NA
+  aws_secret_access_key: NA
+  bucket_base_name: NA
+
+production:
+  aws_access_key: NA
+  aws_secret_access_key: NA
+  bucket_base_name: NA
