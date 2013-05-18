@@ -1,39 +1,28 @@
-<div class="span12">
-<h1>Listing projects</h1>
+<div class="container">
+    <div class="row">
+        <div class="span12 projects">
+        <h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>End date</th>
-    <th>Min price</th>
-    <th>Max price</th>
-    <th>Vote</th>
-    <th>Flag</th>
-    <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <% @projects.each do |project| %>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.description %></td>
-    <td><%= project.end_date.strftime("%m/%d/%Y") %></td>
-    <td><%= project.min_price %></td>
-    <td><%= project.max_price %></td>
-    <td><%= project.vote %></td>
-    <td><%= link_to 'Show', project %></td>
-    <% if can? :update, project %>
-      <td><%= link_to 'Edit', edit_project_path(project) %></td>
-      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+        <div class="project">
+            <div class="pull-right">Ends: <%= project.end_date %></div><br/>
+            <div class="pull-right">$<%= project.min_price %> - $<%= project.max_price %></div>
+            <h1><a href="/projects/<%= project.id %>"><%= project.title %></a></h1>
+            <h3><%= project.description %></h3>
+        </div>
 
-<br />
+            <% if can? :update, project %>
+              <%= link_to 'Edit', edit_project_path(project) %> |
+              <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        <% end %>
 
-<%= link_to 'New Project', new_project_path %>
+        <br />
+        <%= link_to 'New Project', new_project_path %>
+
+        <br/>
+        <br/>
+        </div>
+    </div>
 </div>
