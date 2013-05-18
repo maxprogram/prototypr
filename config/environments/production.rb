@@ -74,10 +74,13 @@ Prototypr::Application.configure do
     :s3_protocol => 'http',
     :s3_permissions => :private,
     :path => "photos/:id/:filename",
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    :s3_credentials => "#{Rails.root}/config/s3.yml"
   }
+  # ,
+  #  :s3_credentials => {
+  #    :bucket => ENV['AWS_BUCKET'],
+  #    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #  }
+
 end
