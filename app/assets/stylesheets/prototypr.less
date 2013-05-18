@@ -23,9 +23,17 @@
 @bigFont: "Bebas Neue", Helvetica, sans-serif;
 @niceFont: "Open Sans", Helvetica, sans-serif;
 
+@navHeight: 41px;
+@footerHeight: 90px;
+
 body {
-    padding-top: 60px;
+    padding-top: @navHeight;
     font-family: @niceFont;
+}
+
+html, body {
+    height: 100%;
+    .box-sizing(border-box);
 }
 
 #error_explanation {
@@ -41,7 +49,7 @@ body {
     z-index: 1;
     width: 100%;
     height: 500px;
-    margin-top: -60px;
+    margin-top: -@navHeight;
     margin-bottom: 35px;
     overflow: hidden;
     background-color: @black;
@@ -64,19 +72,35 @@ body {
         text-shadow: 0 0 15px rgba(0,0,0,0.6), 0 -1px 1px rgba(0,0,0,0.6)
     }
 
-    .span12 {
+    .center {
         text-align: center;
+        margin: 0 auto;
+        max-width: 550px;
     }
 
     h1 {
         color: @white;
         font-family: @bigFont;
-        font-size: 50px;
+        font-size: 55px;
     }
 
     h2 {
         color: @white;
         font-size: 20px;
+        line-height: 1.5em;
+        margin-bottom: 25px;
+    }
+}
+
+.main {
+    clear: both;
+    padding-bottom: @footerHeight;
+    min-height: 100%;
+    height: auto !important;
+    margin-bottom: -@footerHeight;
+    .box-sizing(border-box);
+    #footer {
+        height: @footerHeight;
     }
 }
 
@@ -90,7 +114,10 @@ h1 {
 }
 
 .process {
-    h1, h4 {
+    img {
+        width: 100%;
+    }
+    h3 {
         text-align: center;
         font-family: @niceFont;
         font-weight: normal;
@@ -100,6 +127,10 @@ h1 {
 .samples {
     padding: 35px 0;
     background-color: @grayLighter;
+    h1 {
+        margin-bottom: 25px;
+        text-align: center;
+    }
 
     @boxMargin: 10px;
     .project {
@@ -135,17 +166,37 @@ textarea {
 .projects {
     margin: 0 auto;
     width: 60%;
-    .project {
+
+    .title { font-size: 25px; }
+    .desc { font-size: 18px; }
+    .pull-left {
+        width: 50%;
+    }
+    a.project {
+        display: block;
+        color: @grayDarker;
         width: 100%;
         border: 1px solid @grayLighter;
         margin: 15px 0;
+        padding: 15px;
+        .clearfix();
+        .box-sizing(border-box);
+        .border-radius(5px);
+        &:hover {
+            text-decoration: none;
+            background-color: lighten(@green, 35%)
+        }
     }
 }
 
 .footer {
-    margin: 0;
+    position: relative;
+    clear: both;
+    height: @footerHeight;
+    .box-sizing(border-box);
     background-color: @gray;
     color: @white;
     text-shadow: 0 -1px 1px rgba(0,0,0,0.9);
     padding: 35px 0;
+    margin-top: -@navHeight;
 }

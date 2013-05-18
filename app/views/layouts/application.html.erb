@@ -8,13 +8,25 @@
 </head>
 <body>
     <%= render 'helpers/nav' %>
-    <% if !notice.nil?%>
-    <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if !alert.nil?%>
-    <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+
+    <div class="main">
+        <% if !notice.nil?%>
+        <div class="container">
+            <div class="span12">
+                <p class="alert notice"><%= notice %></p>
+            </div>
+        </div>
+        <% end %>
+        <% if !alert.nil?%>
+        <div class="container">
+            <div class="span12">
+                <p class="alert"><%= alert %></p>
+            </div>
+        </div>
+        <% end %>
+        <%= yield %>
+    </div>
+
     <%= render 'helpers/footer' %>
 
 <%= javascript_include_tag "application" %>
