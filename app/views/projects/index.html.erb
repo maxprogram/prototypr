@@ -1,29 +1,40 @@
+<div class="page-hero">
+    <%= image_tag("hexmap.jpg") %>
+    <div class="inner">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h1>Find a Project</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="span12 projects">
-        <h1>Find a project</h1>
+            <% @projects.each do |project| %>
 
-        <% @projects.each do |project| %>
+            <a href="/projects/<%= project.id %>" class="project">
+                <div class="pull-left">
+                    <div class="title"><%= project.title %></div>
+                    <div class="desc"><%= project.description %></div>
+                </div>
+                <div class="pull-left">
+                    <div class="right">Ends: <%= project.end_date %></div>
+                    <div class="right">$<%= project.min_price %> - $<%= project.max_price %></div>
+                </div>
+            </a>
 
-        <a href="/projects/<%= project.id %>" class="project">
-            <div class="pull-left">
-                <div class="title"><%= project.title %></div>
-                <div class="desc"><%= project.description %></div>
-            </div>
-            <div class="pull-left">
-                <div class="right">Ends: <%= project.end_date %></div>
-                <div class="right">$<%= project.min_price %> - $<%= project.max_price %></div>
-            </div>
-        </a>
-
-            <% if can? :update, project %>
-              <%= link_to 'Edit', edit_project_path(project) %> |
-              <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if can? :update, project %>
+                  <%= link_to 'Edit', edit_project_path(project) %> |
+                  <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
             <% end %>
-        <% end %>
 
-        <br/>
-        <br/>
+            <br/>
+            <br/>
         </div>
     </div>
 </div>

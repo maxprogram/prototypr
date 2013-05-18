@@ -92,6 +92,42 @@ html, body {
     }
 }
 
+.page-hero {
+    @heroHeight: 160px;
+
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: @heroHeight;
+    margin-bottom: 35px;
+    overflow: hidden;
+    background-color: @black;
+
+    img {
+        position: relative;
+        z-index: 20;
+        left: 50%;
+        width: 1600px;
+        margin-top: -450px;
+        margin-left: -800px;
+    }
+    .inner {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 40;
+        margin-top: @heroHeight/4;
+        background-color: rgba(0,0,0,0.6);
+        padding: 10px 0;
+        text-shadow: 0 0 15px rgba(0,0,0,0.7), 0 -1px 3px rgba(0,0,0,0.9)
+    }
+    h1 {
+        text-align: center;
+        color: @white;
+        font-size: 50px;
+    }
+}
+
 .main {
     clear: both;
     padding-bottom: @footerHeight;
@@ -187,6 +223,10 @@ textarea {
             background-color: lighten(@green, 35%)
         }
     }
+}
+
+.dashboard {
+    margin-top: 20px;
 }
 
 .footer {
