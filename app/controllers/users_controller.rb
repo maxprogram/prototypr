@@ -13,11 +13,15 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    if(!current_user.nil?)
+      @user = User.find(current_user.id)
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
+    else
+      redirect_to root_url
     end
   end
 
@@ -33,9 +37,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-    @user = User.find(params[:id])
-  end
+  #def edit
+  #  @user = User.find(params[:id])
+  #end
 
   # POST /users
   # POST /users.json

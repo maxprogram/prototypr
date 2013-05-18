@@ -1,13 +1,14 @@
 Prototypr::Application.routes.draw do
   resources :submissions
 
-
   resources :projects
 
+  #resources :users, :path_names => { :show => 'profile'}
 
   devise_for :users, :path_names => { :sign_in => 'login', :sign_up => 'register'}
 
-  #resources :users
+  match "profile" => "home#show"
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:
