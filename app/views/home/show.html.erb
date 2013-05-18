@@ -5,7 +5,12 @@
             <div class="editbutton btn btn-middle btn-link" style="float:right;margin-right:40px;">
             <%= link_to 'Edit', edit_user_registration_path(@user) %>
             </div>
-            <%= image_tag "empty_profile.gif", :class => 'image-wrap', :style => 'm-webkit-border-radius: 50em;
+            <% if @user.profileimg.url.nil?%>
+              <%= image_tag "empty_profile.gif", :class => 'image-wrap', :style => 'm-webkit-border-radius: 50em;-moz-border-radius: 50em;border-radius: 50em;width: 150px;height: 150px;float:left;margin-left:30px;' %>
+            <% else %>
+              <%= image_tag @user.profileimg.url(:medium), :class => 'image-wrap', :style => 'm-webkit-border-radius: 50em;-moz-border-radius: 50em;border-radius: 50em;width: 150px;height: 150px;float:left;margin-left:30px;' %>
+            <% end%>
+            <%#= image_tag "empty_profile.gif", :class => 'image-wrap', :style => 'm-webkit-border-radius: 50em;
             -moz-border-radius: 50em;border-radius: 50em;width: 150px;height: 150px;float:left;margin-left:30px;' %>
 
             <div class="info" style="font-size:2em;float:left;margin-left:20px;">

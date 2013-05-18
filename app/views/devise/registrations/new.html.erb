@@ -43,6 +43,11 @@
             <%#= f.text_area :profile %>
           </div-->
           <div class="field">
+            <%= f.label :profile_pic %><br />
+            <%= f.file_field :profileimg %>
+          </div>
+
+          <div class="field">
             <%= f.label "About me" %>
             <%= f.text_area :bio %>
           </div>
