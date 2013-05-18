@@ -34,8 +34,11 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :last %>
   </div>
-  
   <div class="field">
+    <%= f.label :profile_pic %><br />
+    <%= f.file_field :profileimg %>
+  </div>
+  <!--div class="field">
     TODO: Profile Pic upload field
     <%#= f.label :profile %><br />
     <%#= f.text_area :profile %>
